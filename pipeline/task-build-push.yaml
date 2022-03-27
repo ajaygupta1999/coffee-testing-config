@@ -50,7 +50,7 @@ spec:
 
   - name: build-push
     image: quay.io/buildah/stable
-    command: ["buildah", "push", "--tls-verify=false", "$(params.appImage):$(params.buildRevision)", "docker://$(params.appImage):$(params.buildRevision)"]
+    command: ["buildah", "push", "--creds", "ajaygupta1999:565df95c-4e36-43bc-982b-5525dc7eb932",  "--tls-verify=false", "$(params.appImage):$(params.buildRevision)", "docker://$(params.appImage):$(params.buildRevision)"]
     volumeMounts:
     - name: varlibc
       mountPath: /var/lib/containers
