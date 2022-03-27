@@ -1,0 +1,3 @@
+== GitOps Config Repository
+
+For an example on Tekton with ArgoCD see https://github.com/sdaschner/tekton-argocd-example
