@@ -56,12 +56,15 @@ spec:
       #!/usr/bin/env sh
       set -e
 
-      git config --global user.email "tekton@tekton.dev"
-      git config --global user.name "Tekton Pipeline"
-      git add .
-      git commit --allow-empty -m "[tekton] updating $(inputs.params.environment) image to $(inputs.params.buildRevision)"
       eval $(ssh-agent)
       ssh-add ~/.ssh/id_*
+
+      git config --global user.email "tekton@tekton.dev"
+      git config --global user.name "Tekton Pipeline"
+      git config --global core.sshCommand 'ssh -o StrictHostKeyChecking=accept-new'
+      
+      git add .
+      git commit --allow-empty -m "[tekton] updating $(inputs.params.environment) image to $(inputs.params.buildRevision)"
       git push origin master
 
   - name: wait-for-argocd-rollout
