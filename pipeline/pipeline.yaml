@@ -58,7 +58,7 @@ spec:
     - deploy-systemtest
     params:
     - name: gateway
-      value: 'test.coffee.daschner.dev'
+      value: 'coffee-gateway'
     - name: appGitUrl
       value: $(params.appGitUrl)
     - name: buildRevision
@@ -86,20 +86,4 @@ spec:
     workspaces:
     - name: config-source
       workspace: config-source
-
-  - name: run-prod-smoketest
-    taskRef:
-      name: run-smoketest
-    runAfter:
-    - deploy-prod
-    params:
-    - name: gateway
-      value: 'coffee.daschner.dev'
-    - name: buildRevision
-      value: $(params.buildRevision)
-    - name: appGitUrl
-      value: $(params.appGitUrl)
-    workspaces:
-    - name: app-source
-      workspace: app-source
 ---
