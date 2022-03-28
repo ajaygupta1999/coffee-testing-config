@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: coffee-shop
-        image: docker.sebastian-daschner.com/coffee-testing:993dee1c508aa3c1130f4347252708e9bc5283fb
+        image: registry.hub.docker.com/ajaygupta1999/coffee-testing:993dee1c508aa3c1130f4347252708e9bc5283fb
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
