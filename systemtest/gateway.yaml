@@ -31,7 +31,7 @@ spec:
         prefix: "/__admin"
     route:
     - destination:
-        host: barista
+        host: barista.systemtest.svc.cluster.local
         subset: v1
         port:
           number: 8080
@@ -44,7 +44,7 @@ spec:
         prefix: "/health"
     route:
     - destination:
-        host: coffee-shop
+        host: coffee-shop.systemtest.svc.cluster.local
         subset: v1
         port:
           number: 8080

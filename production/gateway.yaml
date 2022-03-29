@@ -29,7 +29,7 @@ spec:
         prefix: "/processes"
     route:
     - destination:
-        host: barista
+        host: barista.production.svc.cluster.local
         subset: v1
         port:
           number: 8080
@@ -42,7 +42,7 @@ spec:
         prefix: "/health"
     route:
     - destination:
-        host: coffee-shop
+        host: coffee-shop.production.svc.cluster.local
         subset: v1
         port:
           number: 8080
