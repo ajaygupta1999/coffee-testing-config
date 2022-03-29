@@ -20,7 +20,7 @@ metadata:
   name: coffee-gateway
 spec:
   hosts:
-  - "build-deploy-rtvbj-run-pod"
+  - "build-deploy-rtvbj-run-systemtest-pod"
   gateways:
   - coffee-gateway
   http:
