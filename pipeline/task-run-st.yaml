@@ -32,6 +32,9 @@ spec:
     command:
     - /usr/bin/mvn
     args:
-    - clean
-    - package
+    - verify
+    - "-Dcoffee-shop.test.host=$(inputs.params.gateway)"
+    - "-Dcoffee-shop.test.port=80"
+    - "-Dbarista.test.host=$(inputs.params.gateway)"
+    - "-Dbarista.test.port=80"
 ---
