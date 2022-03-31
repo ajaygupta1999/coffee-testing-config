@@ -36,7 +36,7 @@ spec:
             name: coffee-shop
             port:
               number: 8080
-      - path: /health
+      - path: /q/health
         pathType: Prefix
         backend:
           service:
