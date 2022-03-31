@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: coffee-shop-db-sec-sec
+  name: coffee-shop-db-sec
 spec:
   selector:
     app: coffee-shop-db-sec
