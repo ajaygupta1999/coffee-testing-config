@@ -6,7 +6,8 @@ metadata:
 spec:
   ingressClassName: kong
   rules:
-  - http:
+  - host: systemtest.coffe-shop.com
+    http:
       paths:
       - path: /processes
         pathType: Prefix
