@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: coffee-shop-db
+  name: coffee-shop-db-sec-sec
 spec:
   selector:
-    app: coffee-shop-db
+    app: coffee-shop-db-sec
   ports:
   - port: 5432
 ---
@@ -12,19 +12,19 @@ spec:
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: coffee-shop-db
+  name: coffee-shop-db-sec
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: coffee-shop-db
+      app: coffee-shop-db-sec
   template:
     metadata:
       labels:
-        app: coffee-shop-db
+        app: coffee-shop-db-sec
     spec:
       containers:
-      - name: coffee-shop-db
+      - name: coffee-shop-db-sec
         image: postgres:9.5
         imagePullPolicy: Always
         env:
