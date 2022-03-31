@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: barista
+  name: barista-sec
 spec:
   selector:
-    app: barista
+    app: barista-sec
   ports:
   - port: 8080
 ---
@@ -12,23 +12,23 @@ spec:
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: barista
+  name: barista-sec
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: barista
+      app: barista-sec
       version: v1
   template:
     metadata:
       labels:
-        app: barista
+        app: barista-sec
         version: v1
       annotations:
         revision: "0315a65234fd43fa83ba26c7e98fc6e353213e43"
     spec:
       containers:
-      - name: barista
+      - name: barista-sec
         image: sdaschner/barista:quarkus-testing-1
         imagePullPolicy: Always
         readinessProbe:

@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: coffee-shop
+  name: coffee-shop-sec
 spec:
   selector:
-    app: coffee-shop
+    app: coffee-shop-sec
   ports:
   - port: 8080
 ---
@@ -12,23 +12,23 @@ spec:
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: coffee-shop
+  name: coffee-shop-sec
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: coffee-shop
+      app: coffee-shop-sec
       version: v1
   template:
     metadata:
       labels:
-        app: coffee-shop
+        app: coffee-shop-sec
         version: v1
       annotations:
         revision: "0315a65234fd43fa83ba26c7e98fc6e353213e43"
     spec:
       containers:
-      - name: coffee-shop
+      - name: coffee-shop-sec
         image: registry.hub.docker.com/ajaygupta1999/coffee-shop:0315a65234fd43fa83ba26c7e98fc6e353213e43
         imagePullPolicy: Always
         ports:

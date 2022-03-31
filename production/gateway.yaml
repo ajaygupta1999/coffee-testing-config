@@ -12,35 +12,35 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: barista
+            name: barista-sec
             port:
               number: 8080
       - path: /__admin
         pathType: Prefix
         backend:
           service:
-            name: barista
+            name: barista-sec
             port:
               number: 8080
       - path: /orders
         pathType: Prefix
         backend:
           service:
-            name: coffee-shop
+            name: coffee-shop-sec
             port:
               number: 8080
       - path: /types
         pathType: Prefix
         backend:
           service:
-            name: coffee-shop
+            name: coffee-shop-sec
             port:
               number: 8080
       - path: /q/health
         pathType: Prefix
         backend:
           service:
-            name: coffee-shop
+            name: coffee-shop-sec
             port:
               number: 8080
 ---      
