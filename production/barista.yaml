@@ -25,7 +25,7 @@ spec:
         app: barista-sec
         version: v1
       annotations:
-        revision: "4abe4d3442547de913a59eed7fa3713538f72015"
+        revision: "13c2375c6432337a595a72d1a8442b80072b3320"
     spec:
       containers:
       - name: barista-sec
