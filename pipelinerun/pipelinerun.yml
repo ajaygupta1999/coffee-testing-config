@@ -8,7 +8,7 @@ spec:
   serviceAccountName: pipeline
   params:
   - name: buildRevision
-    value: '1d9ba9e623a9b1cba73d17f64b0c1d0ad0e88952'
+    value: '359a3d8ac2d6ba8ff347a30d39e1509fcccecf8f'
   - name: appGitUrl
     value: 'git@github.com:ajaygupta1999/coffee-testing.git'
   - name: configGitUrl
