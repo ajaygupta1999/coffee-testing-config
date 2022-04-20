@@ -86,20 +86,4 @@ spec:
     workspaces:
     - name: config-source
       workspace: config-source
-
-  - name: run-prod-smoketest
-    taskRef:
-      name: run-smoketest
-    runAfter:
-    - deploy-prod
-    params:
-    - name: gateway
-      value: 'example.com'
-    - name: buildRevision
-      value: $(params.buildRevision)
-    - name: appGitUrl
-      value: $(params.appGitUrl)
-    workspaces:
-    - name: app-source
-      workspace: app-source
 ---
