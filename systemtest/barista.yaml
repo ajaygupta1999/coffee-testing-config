@@ -7,8 +7,6 @@ spec:
     app: barista
   ports:
   - port: 8080
-    name: http
-    targetPort: 8080
 ---
 
 kind: Deployment
@@ -27,7 +25,7 @@ spec:
         app: barista
         version: v1
       annotations:
-        revision: "93f57033debea7fe97798a65d7f033dfe58e58a5"
+        revision: "fb0f69f6c4f423fb2e5e47f29dcf5dbc16cf9437"
     spec:
       containers:
       - name: barista
@@ -36,3 +34,28 @@ spec:
       restartPolicy: Always
 ---
 
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: barista
+spec:
+  hosts:
+  - barista
+  http:
+  - route:
+    - destination:
+        host: barista
+        subset: v1
+---
+
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: barista
+spec:
+  host: barista
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+---

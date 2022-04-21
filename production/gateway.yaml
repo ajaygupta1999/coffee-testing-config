@@ -1,49 +1,49 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
 metadata:
-  name: coffee-gateway-sec
-  namespace: default
+  name: coffee-gateway
 spec:
-  ingressClassName: kong
-  rules:
-  - http:
-      paths:
-      - path: /processes
-        pathType: Prefix
-        backend:
-          service:
-            name: barista-sec
-            port:
-              number: 8080
-      - path: /__admin
-        pathType: Prefix
-        backend:
-          service:
-            name: barista-sec
-            port:
-              number: 8080
-      - path: /orders
-        pathType: Prefix
-        backend:
-          service:
-            name: coffee-shop-sec
-            port:
-              number: 8080
-      - path: /types
-        pathType: Prefix
-        backend:
-          service:
-            name: coffee-shop-sec
-            port:
-              number: 8080
-      - path: /q/health
-        pathType: Prefix
-        backend:
-          service:
-            name: coffee-shop-sec
-            port:
-              number: 8080
----      
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "coffee.daschner.dev"
+---
 
-
-
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: coffee-gateway
+spec:
+  hosts:
+  - "coffee.daschner.dev"
+  gateways:
+  - coffee-gateway
+  http:
+  - match:
+    - uri:
+        prefix: "/processes"
+    route:
+    - destination:
+        host: barista
+        subset: v1
+        port:
+          number: 8080
+  - match:
+    - uri:
+        prefix: "/orders"
+    - uri:
+        prefix: "/types"
+    - uri:
+        prefix: "/health"
+    route:
+    - destination:
+        host: coffee-shop
+        subset: v1
+        port:
+          number: 8080
+---
