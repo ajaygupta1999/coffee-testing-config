@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: kong
   rules:
-    http:
+  - http:
       paths:
       - path: /processes
         pathType: Prefix
