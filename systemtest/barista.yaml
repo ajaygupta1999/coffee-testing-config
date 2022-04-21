@@ -7,6 +7,8 @@ spec:
     app: barista
   ports:
   - port: 8080
+    name: http
+    targetPort: 8080
 ---
 
 kind: Deployment

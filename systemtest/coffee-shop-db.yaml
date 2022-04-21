@@ -7,6 +7,8 @@ spec:
     app: coffee-shop-db
   ports:
   - port: 5432
+    name: http
+    targetPort: 5432
 ---
 
 kind: Deployment
