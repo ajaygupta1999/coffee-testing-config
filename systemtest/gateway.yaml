@@ -8,35 +8,35 @@ spec:
   rules:
     http:
       paths:
-      - path: /processes
+      - path: /st/processes
         pathType: Prefix
         backend:
           service:
             name: barista
             port:
               number: 8080
-      - path: /__admin
+      - path: /st/__admin
         pathType: Prefix
         backend:
           service:
             name: barista
             port:
               number: 8080
-      - path: /orders
+      - path: /st/orders
         pathType: Prefix
         backend:
           service:
             name: coffee-shop
             port:
               number: 8080
-      - path: /types
+      - path: /st/types
         pathType: Prefix
         backend:
           service:
             name: coffee-shop
             port:
               number: 8080
-      - path: /q/health
+      - path: /st/q/health
         pathType: Prefix
         backend:
           service:
