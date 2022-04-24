@@ -2,6 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: coffee-gateway
+  namespace: istio-system
 spec:
   selector:
     istio: ingressgateway
@@ -11,13 +12,14 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "coffeeshop.production.app"
+    - "*"
 ---
 
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: coffee-gateway
+  namespace: istio-system
 spec:
   hosts:
   - "coffeeshop.production.app"
@@ -29,7 +31,7 @@ spec:
         prefix: "/processes"
     route:
     - destination:
-        host: barista
+        host: barista.production.svc.cluster.local
         subset: v1
         port:
           number: 8080
@@ -42,7 +44,7 @@ spec:
         prefix: "/health"
     route:
     - destination:
-        host: coffee-shop
+        host: coffee-shop.production.svc.cluster.local
         subset: v1
         port:
           number: 8080
