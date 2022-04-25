@@ -29,6 +29,8 @@ spec:
   - match:
     - uri:
         prefix: "/processes"
+    - uri:
+        prefix: "/__admin"
     route:
     - destination:
         host: barista.production.svc.cluster.local
@@ -36,7 +38,11 @@ spec:
           number: 8080
   - match:
     - uri:
-        prefix: "/*"
+        prefix: "/orders"
+    - uri:
+        prefix: "/types"
+    - uri:
+        prefix: "/health"
     route:
     - destination:
         host: coffee-shop.production.svc.cluster.local

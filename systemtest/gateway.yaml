@@ -21,7 +21,15 @@ spec:
           number: 8080
   - match:
     - uri:
-        prefix: "/*"
+        prefix: "/orders"
+    - uri:
+        prefix: "/types"
+    - uri:
+        prefix: "/health"
+    - uri:
+        regex: "/[a-zA-Z]+\.html" 
+    - uri:
+        regex: "/types/[a-zA-Z]+"
     route:
     - destination:
         host: coffee-shop.systemtest.svc.cluster.local
