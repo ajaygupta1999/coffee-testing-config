@@ -31,9 +31,17 @@ spec:
     - uri:
         prefix: "/order.html"
     - uri:
-        prefix: "/types/"
+        prefix: "/form.js"
     - uri:
-        prefix: "/types"    
+        prefix: "/style.css"
+    - uri:
+        prefix: "/types"
+    - uri:
+        prefix: "/types/espresso/origins"
+    - uri:
+        prefix: "/types/pour_over/origins"
+    - uri:
+        prefix: "/types/latte/origins"         
     route:
     - destination:
         host: coffee-shop.systemtest.svc.cluster.local
