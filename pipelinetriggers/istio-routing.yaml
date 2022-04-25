@@ -12,7 +12,7 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "tekton-triggers.daschner.dev"
+    - "68ba-206-84-239-100.in.ngrok.io"
 ---
 
 apiVersion: networking.istio.io/v1alpha3
@@ -22,7 +22,7 @@ metadata:
   namespace: tekton-pipelines
 spec:
   hosts:
-  - "tekton-triggers.daschner.dev"
+  - "68ba-206-84-239-100.in.ngrok.io"
   gateways:
   - tekton-triggers
   http:
