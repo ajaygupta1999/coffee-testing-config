@@ -27,7 +27,7 @@ spec:
     - uri:
         prefix: "/health"
     - uri:
-        prefix: "/index.html"
+        prefix: "/*.html"
     route:
     - destination:
         host: coffee-shop.systemtest.svc.cluster.local
