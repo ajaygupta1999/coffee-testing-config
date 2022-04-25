@@ -43,6 +43,22 @@ spec:
         prefix: "/types"
     - uri:
         prefix: "/health"
+    - uri:
+        prefix: "/index.html" 
+    - uri:
+        prefix: "/order.html"
+    - uri:
+        prefix: "/form.js"
+    - uri:
+        prefix: "/style.css"
+    - uri:
+        prefix: "/types"
+    - uri:
+        prefix: "/types/espresso/origins"
+    - uri:
+        prefix: "/types/pour_over/origins"
+    - uri:
+        prefix: "/types/latte/origins"
     route:
     - destination:
         host: coffee-shop.production.svc.cluster.local
