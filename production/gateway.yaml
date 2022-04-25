@@ -41,6 +41,8 @@ spec:
         prefix: "/types"
     - uri:
         prefix: "/health"
+    - uri:
+        prefix: "/index.html"
     route:
     - destination:
         host: coffee-shop.production.svc.cluster.local
