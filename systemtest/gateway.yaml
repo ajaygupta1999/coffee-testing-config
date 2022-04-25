@@ -21,15 +21,7 @@ spec:
           number: 8080
   - match:
     - uri:
-        prefix: "/orders"
-    - uri:
-        prefix: "/types"
-    - uri:
-        prefix: "/health"
-    - uri:
-        prefix: "/index.html"
-    - uri:
-        prefix: "/order.html"
+        prefix: "/*"
     route:
     - destination:
         host: coffee-shop.systemtest.svc.cluster.local
