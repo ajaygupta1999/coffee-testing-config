@@ -17,7 +17,6 @@ spec:
     route:
     - destination:
         host: barista.systemtest.svc.cluster.local
-        subset: v1
         port:
           number: 8080
   - match:
@@ -30,7 +29,6 @@ spec:
     route:
     - destination:
         host: coffee-shop.systemtest.svc.cluster.local
-        subset: v1
         port:
           number: 8080
 ---
