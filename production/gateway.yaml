@@ -22,7 +22,7 @@ metadata:
   namespace: istio-system
 spec:
   hosts:
-  - "coffeeshop.production.app"
+  - "coffeeshop.production.com"
   gateways:
   - coffee-gateway
   http:

@@ -5,7 +5,7 @@ metadata:
   namespace: istio-system
 spec:
   hosts:
-  - "coffeeshop.testing.app"
+  - "coffeeshop.testing.com"
   gateways:
   - coffee-gateway
   http:
